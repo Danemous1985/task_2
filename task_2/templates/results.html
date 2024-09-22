@@ -4,7 +4,7 @@
     <title>Query Results</title>
 </head>
 <body>
-    <h1>Query Results</h1>
+    <h1>Top 10 Time Slots with Highest Trade Value</h1>
     <table>
         <tr>
             <th>Time Ref</th>
@@ -12,8 +12,11 @@
         </tr>
         {% for row in results %}
         <tr>
-            <td>{{ row.time_ref }}</td>
-            <td>{{ row.trade_value }}</td>
+            <!-- This can format the time_ref column to be more readable for user -->
+            <!-- Use year and month -->
+            <td>{{ row.time_ref[:4] }}-{{ row.time_ref[4:6] }}</td>  
+            <!-- The trade value have commas for being more readable -->
+            <td>{{ "{:,}".format(row.trade_value) }}</td>  
         </tr>
         {% endfor %}
     </table>

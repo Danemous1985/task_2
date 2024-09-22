@@ -1,5 +1,10 @@
 runtime: python39
 
 handlers:
-- url: /.*
-  script: auto
+  # Serve static files from the "static" directory
+  - url: /static
+    static_dir: static
+
+  # Route all other requests to the Flask app
+  - url: /.*
+    script: auto

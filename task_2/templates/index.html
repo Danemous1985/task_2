@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BigQuery App</title>
+    <title>BigQuery Trade Analytics</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <!-- I'm using this google font. looks nice! -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to the BigQuery Web App</h1>
-    <p>Select a query to execute:</p>
-    <a href="/query1"><button>Top 10 Trade Values</button></a>
-    <!-- Add more buttons for future queries -->
+    <div class="container">
+        <h1>BigQuery Trade Analytics Application</h1>
+        <p>This application demonstrates the use of Google BigQuery to analyze global trade data.</p>
+        <p>Using the dataset provided, I have written queries to retrieve important data from global trade records.</p>
+
+        <h2>Available Queries</h2>
+        <ul>
+            <li>Query 1: <a href="/query1"><button>Top 10 Time Slots with Highest Trade Value</button></a></li>
+            <!-- Leaving this comment here for when I added more buttons for queries -->
+        </ul>
+
+        <h2>Instructions</h2>
+        <p>Click on the buttons above to run queries on the trade data. The results will be displayed on the next page.</p>
+        <p>Each query processes data from multiple CSV files using Google BigQuery, retrieving the results and displaying them in a user-friendly format.</p>
+        <p>As data is being queried in real-time, please allow a moment for the query to process.</p>
+        <h2>Thank you for using BigQuery Trade Analytics Application!</h2>
+    </div>
 </body>
 </html>
