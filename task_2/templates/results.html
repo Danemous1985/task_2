@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Results</title>
+</head>
+<body>
+    <h1>Query Results</h1>
+    <table>
+        <tr>
+            <th>Time Ref</th>
+            <th>Trade Value</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{ row.time_ref }}</td>
+            <td>{{ row.trade_value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
