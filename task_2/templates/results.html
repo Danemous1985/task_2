@@ -2,23 +2,26 @@
 <html>
 <head>
     <title>Query Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_results.css') }}">
 </head>
 <body>
-    <h1>Top 10 Time Slots with Highest Trade Value</h1>
-    <table>
-        <tr>
-            <th>Time Ref</th>
-            <th>Trade Value</th>
-        </tr>
-        {% for row in results %}
-        <tr>
-            <!-- This can format the time_ref column to be more readable for user -->
-            <!-- Use year and month -->
-            <td>{{ row.time_ref[:4] }}-{{ row.time_ref[4:6] }}</td>  
-            <!-- The trade value have commas for being more readable -->
-            <td>{{ "{:,}".format(row.trade_value) }}</td>  
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container">
+        <h1>Top 10 Time Slots with Highest Trade Value</h1>
+        <table>
+            <tr>
+                <th>Time Ref</th>
+                <th>Trade Value</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                <!-- This can format the time_ref column to be more readable for user -->
+                <td>{{ row.time_ref[:4] }}-{{ row.time_ref[4:6] }}</td>  
+                <!-- The trade value has commas for better readability -->
+                <td>{{ "{:,}".format(row.trade_value) }}</td>  
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/"><button>Back to Queries</button></a>
+    </div>
 </body>
 </html>
