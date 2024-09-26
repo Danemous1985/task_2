@@ -2,25 +2,28 @@
 <html>
 <head>
     <title>Query 2 Results</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_query2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_results2.css') }}">
 </head>
 <body>
-    <h1>Top 40 Countries with the Highest Trade Deficit (2013-2015)</h1>
-    <table>
-        <tr>
-            <th>Country Label</th>
-            <th>Product Type</th>
-            <th>Trade Deficit Value</th>
-            <th>Status</th>
-        </tr>
-        {% for row in results %}
-        <tr>
-            <td>{{ row.country_label }}</td>
-            <td>{{ row.product_type }}</td>
-            <td>{{ "{:,}".format(row.trade_deficit_value) }}</td>
-            <td>{{ row.status }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container">
+        <h1>Top 40 Countries with the Highest Trade Deficit (2013-2015)</h1>
+        <table>
+            <tr>
+                <th>Country Label</th>
+                <th>Product Type</th>
+                <th>Trade Deficit Value</th>
+                <th>Status</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                <td>{{ row.country_label }}</td>
+                <td>{{ row.product_type }}</td>
+                <td>{{ "{:,}".format(row.trade_deficit_value) }}</td>
+                <td>{{ row.status }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/"><button>Back to Queries</button></a>
+    </div>
 </body>
 </html>

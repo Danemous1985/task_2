@@ -2,21 +2,24 @@
 <html>
 <head>
     <title>Query 3 Results</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_query3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_results3.css') }}">
 </head>
 <body>
-    <h1>Top 25 Services with the Highest Trade Surplus</h1>
-    <table>
-        <tr>
-            <th>Service Label</th>
-            <th>Trade Surplus Value</th>
-        </tr>
-        {% for row in results %}
-        <tr>
-            <td>{{ row.service_label }}</td>
-            <td>{{ "{:,}".format(row.trade_surplus_value) }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container">
+        <h1>Top 25 Services with the Highest Trade Surplus</h1>
+        <table>
+            <tr>
+                <th>Service Label</th>
+                <th>Trade Surplus Value</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                <td>{{ row.service_label }}</td>
+                <td>{{ "{:,}".format(row.trade_surplus_value) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/"><button>Back to Queries</button></a>
+    </div>
 </body>
 </html>
