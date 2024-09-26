@@ -76,6 +76,7 @@ from the Terminal/Command Line.
 3. The user can navigate between different queries using the "Back to Queries" button.
 
 ## Directory Structure
+```bash
 .
 ├── main.py                  # Main application
 ├── templates/               # HTML templates for the Flask app
